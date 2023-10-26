@@ -1,0 +1,40 @@
+.matriz{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 10px));
+    gap: 10px; /* Espaço entre os quadradinhos */
+    justify-content: center;
+    
+  }
+  
+  .area {
+    width: 225px;
+    height: 46px;
+    background-color: #EFF3FA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .area a{
+    color: #003390;
+    font-weight:bold;
+    font-size: 80%;
+    text-decoration: none;
+  }
+
+  .area a:hover{
+    color: #a2abbb;
+  }
+
+  .area p:nth-child(2){
+    font-size: 70%;
+    text-align: center;
+  }

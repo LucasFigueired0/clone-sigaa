@@ -1,0 +1,18 @@
+<div class="login">
+  <div id="atention">
+    <p>ATENÇÃO</p>
+    <P
+      >O sistema diferencia letras maiúsculas de minúsculas APENAS na senha,
+      portanto ela deve ser digitada da mesma maneira que no cadastro.</P
+    >
+  </div>
+
+  <div class="systems-grid-container">
+    <app-list-systems-ufopa 
+      *ngFor="let systems of systemsUfopa" 
+      nameSystem={{systems.systemName}} 
+      typeSystem={{systems.type}}>
+    </app-list-systems-ufopa>
+  </div>
+  <app-login-form></app-login-form>
+</div>

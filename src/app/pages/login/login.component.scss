@@ -1,0 +1,49 @@
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1010px;
+}
+
+#atention{
+    width: 100%;
+    margin-top: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 70px;
+    background: #EFF3FA;
+    margin-bottom: 3px;
+}
+
+#atention p:nth-child(1){
+    color: #F00;
+    font-weight: bold;
+    font-size: 80%;
+}
+
+#atention p:nth-child(2){
+    font-size: 70%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.systems-grid-container {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 3px));
+    gap: 3px; 
+    justify-content: center;
+}
+  
+
+  
+
+
+  
+  
+  
+  
