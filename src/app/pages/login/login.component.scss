@@ -1,9 +1,11 @@
+@import '../../shared/variables/globalVariables.scss';
 .login{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    max-width: 1010px;
+    max-width: $max-width;
+    height: 492px;
+    transition: opacity ease-in 0.2s;
 }
 
 #atention{
@@ -22,7 +24,7 @@
 #atention p:nth-child(1){
     color: #F00;
     font-weight: bold;
-    font-size: 80%;
+    font-size: 70%;
 }
 
 #atention p:nth-child(2){
@@ -39,7 +41,9 @@
     justify-content: center;
 }
   
-
+#register-list{
+    display: flex;
+}
   
 
 

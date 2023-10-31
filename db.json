@@ -1,0 +1,40 @@
+{
+    "students":[
+        {
+            "id":1,
+            "name":"Lucas Eleutério",
+            "email":"lucas.figueiredo",
+            "password":"1234",
+            "courses":[
+                {
+                    "id":1,
+                    "name":"Estrutura de dados",
+                    "professor":"Fulano de tal"
+                },
+                {
+                    "id":2,
+                    "name":"Bancos de dados",
+                    "professor":"Junior"
+                }
+            ]
+        },
+        {
+            "id":2,
+            "name":"Yuri",
+            "email":"yuri.souza",
+            "password":"456",
+            "courses":[
+                {
+                    "id":1,
+                    "name":"Geometria analítica",
+                    "professor":"Fulano de tal"
+                },
+                {
+                    "id":2,
+                    "name":"Bancos de dados",
+                    "professor":"Junior"
+                }
+            ]
+        }
+    ]
+}

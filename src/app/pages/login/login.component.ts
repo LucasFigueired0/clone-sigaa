@@ -1,52 +1,34 @@
 import { Component } from '@angular/core';
+import { RegistrationOptionsListService } from 'src/app/features/services/registration-options-list.service';
+import { SystemsListService } from 'src/app/features/services/systems-list.service';
+import { Register } from 'src/app/features/models/registerType';
+import { OnInit } from '@angular/core';
+import { SystemTypeList } from 'src/app/features/models/systemTypeList';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
-  systemsUfopa = [
-    {
-      id:"1",
-      systemName:"SIGAA",
-      type:"(Acadêmico)"
-    },
-    {
-      id:"2",
-      systemName:"SIPAC",
-      type:"(Administrativo)"
-    },
-    {
-      id:"3",
-      systemName:"SIGRH",
-      type:"(Recursos Humanos)"
-    },
-    {
-      id:"4",
-      systemName:"SIGED",
-      type:"(Gestão eletrônica de documentos)"
-    },
-    {
-      id:"5",
-      systemName:"SIGEleição",
-      type:"(Controle de processos eleitorais)"
-    },
-    {
-      id:"6",
-      systemName:"SIGEventos",
-      type:"(Gestão de eventos)"
-    },
-    {
-      id:"7",
-      systemName:"SIGAdmin",
-      type:"(Administração e comunicação)"
-    },
-    {
-      id:"8",
-      systemName:"SAAD",
-      type:"(Acompanhamento de atividades docentes)"
-    },
-  ]
+export class LoginComponent implements OnInit{
+
+  constructor(private RegistrationOptions:RegistrationOptionsListService,
+    private SystemList:SystemsListService){}
+
+  
+  registrationList!:Register[];
+  systemList!:SystemTypeList[];
+
+  getRegistrattionList(){
+    this.registrationList = this.RegistrationOptions.getRegister();
+  }
+
+  getSystems(){
+    this.systemList = this.SystemList.getSystemList();
+  }
+  ngOnInit(){
+      this.getRegistrattionList();
+      this.getSystems();
+  }
 
 }

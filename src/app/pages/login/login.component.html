@@ -9,10 +9,19 @@
 
   <div class="systems-grid-container">
     <app-list-systems-ufopa 
-      *ngFor="let systems of systemsUfopa" 
+      *ngFor="let systems of systemList" 
       nameSystem={{systems.systemName}} 
       typeSystem={{systems.type}}>
     </app-list-systems-ufopa>
   </div>
   <app-login-form></app-login-form>
+  <div id="register-list">
+    <app-register-options *ngFor="let register of registrationList" 
+    titleRegister={{register.title}}
+    descriptionRegister={{register.description}}
+    linkImgRegister={{register.imgLink}}
+    linkPageRegister={{register.pageLink}}
+    >
+  </app-register-options>
+  </div>
 </div>

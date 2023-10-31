@@ -1,0 +1,28 @@
+@import '../../../../shared/variables/globalVariables.scss';
+div{
+    margin-top: 40px;
+    width: 270px;
+    height: 94px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img{
+    width: 16px;
+}
+
+div b, p, a{
+    font-size: 70%;
+    text-align: center;
+}
+
+div a{
+    text-decoration: none;
+    color: $color-links;
+    font-weight: bold;
+}
+
+div a:hover{
+    color: #a2abbb;
+}

@@ -5,12 +5,11 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './list-systems-ufopa.component.html',
   styleUrls: ['./list-systems-ufopa.component.scss']
 })
-export class ListSystemsUfopaComponent implements OnInit{
-  constructor(){}
-
+export class ListSystemsUfopaComponent implements OnInit {
+  
   system!:string;
   type!:string;
-
+ 
   @Input()
   set nameSystem(value:string){
     this.system = value;

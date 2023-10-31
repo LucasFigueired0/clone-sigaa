@@ -1,0 +1,72 @@
+@import '../../../../shared/variables/globalVariables.scss';
+.login-form{
+    display: flex;
+    flex-direction: column;
+}
+.help{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.help p{
+    font-size: 70%;
+}
+
+.help a{
+    text-decoration: none;
+    color: $color-links;
+    font-weight: bold;
+}
+
+.structure-form{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#title-form h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #C4D2EB;
+    border-top-right-radius: 10% 20px;
+    font-size: 80%;
+    font-weight: bold;
+    width: 50%;
+    color: #336;
+}
+
+.structure-form form{
+    background-color: #FAFAFA;
+    border: 3px solid #C4D2EB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.structure-form form span{
+    font-size: 70%;
+    margin-right: 3px;
+}
+
+#input-form{
+    margin-top: 3px;
+}
+
+#input-form:nth-child(2){
+    margin-left: 2%;
+}
+
+#input-form input{
+    height: 18px;
+    width: 160px;
+}
+
+.structure-form button{
+    margin-top: 6px;
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+

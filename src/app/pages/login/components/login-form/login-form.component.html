@@ -1,0 +1,25 @@
+<div class="login-form">
+    <div class="help">
+      <p *ngFor="let help of helpList">
+        {{ help.description }}
+        <a href="{{ help.link }}">{{ help.linkDescription }}</a>
+      </p>
+    </div>
+    <div class="structure-form">
+      <div id="title-form">
+        <h3>Entrar no sistema</h3> 
+      </div>
+      <form (ngSubmit)="onSubmit()">
+        <div id="input-form">
+          <span>Usuário: </span>
+          <input type="email" id="username" name="username" [(ngModel)]="usernameView">
+        </div>
+        <div id="input-form">
+          <span>Senha: </span>
+          <input type="password" name="password" id="password" [(ngModel)]="passwordView"/>
+        </div>
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+  </div>
+  

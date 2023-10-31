@@ -1,0 +1,28 @@
+@import '../../shared/variables/globalVariables.scss';
+.footer{
+    width: 100%;
+    height: 70px;
+    max-width: $max-width;
+}
+
+.footer div:nth-child(2){
+    height: 25px;
+    background-color: #404E82;
+    color: #fff;
+    align-items: center;
+    justify-content:flex-start;
+    border-bottom: 3px solid #D99C44;
+}
+
+.footer div:nth-child(1) div:nth-child(2){
+    font-size: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer div:nth-child(1) div:nth-child(2) p{
+  font-size: 0.9em;
+}
+
+
