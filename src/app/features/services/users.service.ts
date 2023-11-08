@@ -34,7 +34,6 @@ export class UsersService {
   }
 
   getByPassword(password:string):Observable<Users[]>{
-    
     return this.httpClient.get<Users[]>(`${this.url}?password=${password}`)
     .pipe(
       retry(2),

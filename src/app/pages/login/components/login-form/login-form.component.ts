@@ -37,7 +37,8 @@ export class LoginFormComponent{
   aluno!: Users;
   user = {} as Users;
   users!: Users[];
-  userTest!: Users;
+  userDataName!: Users;
+  userDataPassword!:Users;
   
 
   id!:number;
@@ -50,35 +51,21 @@ export class LoginFormComponent{
 
   getUserName() {
     this.usersService.getByEmail(this.usernameView).subscribe((user: Users[]) => {
-      this.userTest = user[0];
-      this.handleUserTest();
+      this.userDataName = user[0];
     });
+    this.usersService.getByPassword(this.passwordView).subscribe((user: Users[])=>{
+        this.userDataPassword = user[0];
+    });
+    this.handleValidate(this.userDataPassword, this.userDataName);
   }
 
-  getUserName1() {
-    this.handleUserTest
-    this.usersService.getByEmail(this.usernameView).subscribe((user: Users[]) => {
-      this.userTest = user[0];
-      this.handleUserTest();
-    });
-  }
-
-  // getPassword(){
-  //   this.usersService.getByPassword(this.passwordView).subscribe((user: Users[]=>{
-
-  //   }))
-  // }
-
-  handleUserTest() {
-    
-    this.id = this.userTest.id;
-
-    if (this.userTest) {
-      // console.log("###", this.id);
-      console.log("###", this.userTest.courses);
+  handleValidate(password:Users, name:Users) {
+    console.log(password);
+    if (password && name) {
+      alert("Logado!")
+      console.log("###", this.userDataName.courses);
     } else {
-
-      console.log("###", "UserTest é nulo ou indefinido");
+      console.log("###", "Usuário ou senha inválidos!");
     }
   }
 
