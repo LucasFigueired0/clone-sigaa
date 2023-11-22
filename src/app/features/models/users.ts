@@ -1,7 +1,14 @@
 export interface Users {
     id:number;
     name:string;
-    email:string;
+    last_name:string;
+    username:string;
+    matricula:string;
+    nivel:string;
+    cpf:string;
+    rg:string,
+    date_of_birth:string,
+    initial_semester:string,
     password?:string;
     courses:Disciplinas[];
 }

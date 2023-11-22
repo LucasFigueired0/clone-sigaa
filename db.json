@@ -2,8 +2,15 @@
     "students":[
         {
             "id":1,
-            "name":"Lucas Eleutério",
-            "email":"lucas.figueiredo",
+            "name":"Lucas",
+            "last_name":"Eleutério",
+            "username":"lucas.figueiredo",
+            "matricula":"2010009210",
+            "nivel":"Graduacao",
+            "cpf":"93928465090",
+            "rg":"487348047",
+            "date_of_birth":"30/03/1958",
+            "initial_semester":"2019-1",
             "password":"1234",
             "courses":[
                 {
@@ -21,8 +28,15 @@
         {
             "id":2,
             "name":"Yuri",
-            "email":"yuri.souza",
-            "password":"456",
+            "last_name":"Souza",
+            "username":"yuri.souza",
+            "matricula":"2010009211",
+            "nivel":"Graduacao",
+            "cpf":"26370962090",
+            "rg":"370900170",
+            "date_of_birth":"20/08/1960",
+            "initial_semester":"2019-1",
+            "password":"4567",
             "courses":[
                 {
                     "id":1,

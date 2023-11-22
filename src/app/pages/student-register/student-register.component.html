@@ -1,3 +1,83 @@
 <div class="register">
-    
+  <app-title-forms titleForm="CADASTRO DE DISCENTES"></app-title-forms>
+  <P
+    >Para cadastrar-se no SIGAA é necessário preencher o formulário abaixo. O
+    cadastro só será validado se os dados digitados forem
+    <i>iguais aos dados informados no processo seletivo.</i></P
+  >
+  <form>
+    <table>
+      <caption>
+        <h2>DADOS DO DISCENTE</h2>
+      </caption>
+      <tbody>
+        <tr>
+          <th class="th-input" >Nome:</th>
+          <td>
+            <input type="text"  class="litle-input"/>
+          </td>
+        </tr>
+        <tr>
+          <th class="th-input">Sobrenome:</th>
+          <td>
+            <input type="text" class="large-input"/>
+          </td>
+        </tr>
+        <tr>
+          <th class="th-input">Matrícula:</th>
+          <td>
+            <input type="text"  class="litle-input"/>
+          </td>
+        </tr>
+        <tr>
+          <th class="th-input">Nível:</th>
+          <td>
+            <select name="level" id="" class="large-input">
+              <option value="graduation">Graduação</option>
+              <option value="master_is_degree">Mestrado</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th class="th-input">CPF:</th>
+          <td>
+            <input type="text"  class="litle-input"/>
+          </td>
+        </tr>
+        <tr>
+          <th class="th-input">RG:</th>
+          <td>
+            <input type="text"  class="litle-input"/>
+          </td>
+        </tr>
+        <tr>
+          <th class="th-input">Data de Nacimento:</th>
+          <td>
+            <input type="date" name="" id="" />
+          </td>
+        </tr>
+        <tr>
+          <th class="th-input">Email:</th>
+          <td>
+            <input type="email" name="" id=""  class="large-input"/>
+          </td>
+        </tr>
+        <tr>
+          <th>Login</th>
+        </tr>
+        <tr>
+          <th class="th-input">Senha: </th>
+          <input type="password" class="litle-input" />
+        </tr>
+        <tr>
+          <th class="th-input">confirmar Senha: </th>
+          <input type="password" class="litle-input"/>
+        </tr>
+      </tbody>
+      <tfoot>
+        <button>Cadastrar</button>
+        <input type="submit" value="cancelar" />
+      </tfoot>
+    </table>
+  </form>
 </div>

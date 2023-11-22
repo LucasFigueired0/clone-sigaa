@@ -1,5 +1,70 @@
 .register{
     width: 910px;
     height: 381px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.register p{
+    font-size: 70%;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+
+form{
+    background-color: #F9FBFD;
+    border: 1px solid #DEDFE3;
+    width: 512px;
+    height: 316px;
+}
+
+caption {
+    background: #5166b3;
+    font-weight: bold;
+    color: #fff;
+    height: 21px;
+    text-align: center;
+    line-height: 21px; 
+    width: 512px;
+}
+
+caption h2{
+    font-size: 70%;
+}
+
+th{
+    font-size: 70%;
+    font-weight: normal;
+    text-align: right;
+}
+
+input{
+    height: 17px;
+}
+
+tfoot{
+    width: 512px;
+    border: 1px solid blue;
+}
+
+.input-password{
+    width: 127px;
+    height: 17px;
+}
+
+.th-input{
+    background: url(../../../assets/images/required.gif) no-repeat right;
+    padding-right: 13px;
+}
+
+.litle-input{
+    width: 150px;
+}
+
+.large-input{
+    width: 250px;
+}

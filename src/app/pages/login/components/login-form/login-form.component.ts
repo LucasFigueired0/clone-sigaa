@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { UsersService } from 'src/app/features/services/users.service';
-import { Users } from 'src/app/features/models/users';
-import { NgForm } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { LoginValidate } from 'src/app/features/validators/loginValidate';
+
+import { HelpList } from 'src/app/features/models/helpListType';
+import { HelpListService } from 'src/app/features/services/help-list.service';
+
+import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login-form',
@@ -10,66 +12,34 @@ import { Observable } from 'rxjs';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent{
-  helpList = [
-    {
-      description: "Perdeu o e-mail de confirmação de cadastro?",
-      linkDescription: "Clique aqui para recuperá-lo.",
-      link: "https:/sigadmin.ufopa.edu.br/admin/public/recuperar_codigo.jsf"
-    },
-    {
-      description: "Esqueceu o login",
-      linkDescription: "Clique aqui para recuperá-lo.",
-      link: "#"
-    },
-    {
-      description: "Esqueceu a senha",
-      linkDescription: "Clique aqui para recuperá-la.",
-      link: "#"
-    },
-  ]
+  form!:FormGroup;
+  helpList!:HelpList[];
+  isValidForm!:boolean;
 
-  usernameView!: string;
-  passwordView!: string;
-
-  username!:string;
-  password!:string;
-
-  aluno!: Users;
-  user = {} as Users;
-  users!: Users[];
-  userDataName!: Users;
-  userDataPassword!:Users;
-  
-
-  id!:number;
-
-  constructor(private usersService: UsersService) { }
-
+  constructor(
+    private helpListValues: HelpListService,
+    private formBuilder:FormBuilder,
+    private loginValidate:LoginValidate
+    ) { }
   ngOnInit() {
-    // this.getUserName
-  }
-
-  getUserName() {
-    this.usersService.getByEmail(this.usernameView).subscribe((user: Users[]) => {
-      this.userDataName = user[0];
-    });
-    this.usersService.getByPassword(this.passwordView).subscribe((user: Users[])=>{
-        this.userDataPassword = user[0];
-    });
-    this.handleValidate(this.userDataPassword, this.userDataName);
-  }
-
-  handleValidate(password:Users, name:Users) {
-    console.log(password);
-    if (password && name) {
-      alert("Logado!")
-      console.log("###", this.userDataName.courses);
-    } else {
-      console.log("###", "Usuário ou senha inválidos!");
-    }
+    this.helpList = this.helpListValues.getHelpList();
+    this.form = this.formBuilder.group({
+      username:['',[Validators.required,Validators.minLength(1)]],
+      password:['',[Validators.required, Validators.minLength(6)]]
+    })
+    this.isValidForm=false;
   }
 
   onSubmit() {
-    this.getUserName();
+    this.loginValidate.loginConfirm(this.form.value.username,this.form.value.password)
+    .subscribe((result)=>{
+      if(result){
+        this.isValidForm = false;
+        console.log(this.isValidForm)
+      }else{
+        this.isValidForm = true;
+        console.log(this.isValidForm)
+      }
+    })
   }
 }

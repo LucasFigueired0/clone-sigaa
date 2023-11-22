@@ -25,8 +25,16 @@ export class UsersService {
     })
   }
 
-  getByEmail(email:string):Observable<Users[]>{
-    return this.httpClient.get<Users[]>(`${this.url}?email=${email}`)
+  getByUsername(email:string):Observable<Users[]>{
+    return this.httpClient.get<Users[]>(`${this.url}?username=${email}`)
+    .pipe(
+      retry(2),
+      catchError(this.handleError)
+    )
+  }
+
+  getUserLogin(username:string,password:string):Observable<Users[]>{
+    return this.httpClient.get<Users[]>(`${this.url}?username=${username}&password=${password}`)
     .pipe(
       retry(2),
       catchError(this.handleError)
