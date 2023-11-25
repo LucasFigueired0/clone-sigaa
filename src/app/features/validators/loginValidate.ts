@@ -24,9 +24,15 @@ export class LoginValidate {
             this.usersService.getUserLogin(username, password).subscribe({
                 next: (user: Users[]) => {
                     try {
-                        this.userDataName = user[0];
-                        observer.next(true);
-                        observer.complete();
+                        if(user[0]!==undefined){
+                            this.userDataName = user[0];
+                            observer.next(true);
+                            observer.complete();
+                        }else{
+                            this.userDataName = user[0];
+                            observer.next(false);
+                            observer.complete();
+                        }
                     } catch {
                         observer.next(false);
                         observer.complete();

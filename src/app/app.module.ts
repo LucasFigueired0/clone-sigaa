@@ -17,6 +17,8 @@ import { LoginFormComponent } from './pages/login/components/login-form/login-fo
 import { RegisterOptionsComponent } from './pages/login/components/register-options/register-options.component';
 import { StudentRegisterComponent } from './pages/student-register/student-register.component';
 import { TitleFormsComponent } from './components/title-forms/title-forms.component';
+import { StudentComponent } from './pages/student/student.component';
+import { RegisterValidate } from './features/validators/registerValidate';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { TitleFormsComponent } from './components/title-forms/title-forms.compon
     RegisterOptionsComponent,
     StudentRegisterComponent,
     TitleFormsComponent,
+    StudentComponent,
     
   ],
   imports: [
@@ -39,7 +42,7 @@ import { TitleFormsComponent } from './components/title-forms/title-forms.compon
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [LoginValidate],
-  bootstrap: [AppComponent]
+  providers: [LoginValidate,RegisterValidate],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

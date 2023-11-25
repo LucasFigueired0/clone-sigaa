@@ -19,7 +19,7 @@ export class RegistrationOptionsListService {
         title:"Aluno",
         description:"caso ainda não possua cadastro no SIGAA, clique no link abaixo.",
         imgLink:"https://sigaa.ufopa.edu.br/sigaa/img/user.png",
-        pageLink:"/student-register"
+        pageLink:"/cadastro-aluno"
       },
       {
         title:"Familiares",

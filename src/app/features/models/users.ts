@@ -3,8 +3,8 @@ export interface Users {
     name:string;
     last_name:string;
     username:string;
-    matricula:string;
-    nivel:string;
+    registration_number:string;
+    level:string;
     cpf:string;
     rg:string,
     date_of_birth:string,
