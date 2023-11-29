@@ -100,3 +100,40 @@ tfoot{
     height: 38px;
     width: 512px;
 }
+
+.form-error{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 850px;
+}
+
+#errors-id{
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    width: 100%;
+}
+
+#errors-id ul li{
+    font-size: 70%;
+    color: #F11;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+#close-errors{
+   display: flex;
+   justify-content:right;
+   height: auto;
+   width: 100%;
+   
+}
+
+#close-errors p{
+    color: #AAA;
+    font-size: 70%;
+    font-weight: bold;
+    cursor: pointer;
+}

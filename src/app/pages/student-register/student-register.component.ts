@@ -4,6 +4,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Users } from 'src/app/features/models/users';
 import { Router } from '@angular/router';
 
+import { RegisterValidate } from 'src/app/features/validators/registerValidate';
+import { RegisterValidateType } from 'src/app/features/models/registerValidateType';
+
 @Component({
   selector: 'app-student-register',
   templateUrl: './student-register.component.html',
@@ -14,9 +17,25 @@ export class StudentRegisterComponent {
   elements!: Users;
   endForm!: boolean;
   sair!: string
+  formValues!: RegisterValidateType;
 
-  constructor(private formBuilder: FormBuilder,
-    private router: Router) { }
+  correctName?: boolean;
+  correctLastName?: boolean;
+  correctRegistration?: boolean;
+  correctLevel?: boolean;
+  correctCpf?: boolean;
+  correctRg?: boolean;
+  correctBirthDay?: boolean;
+  correctEmail?: boolean;
+  correctPassWord?: boolean;
+  correctConfirmPassword?: boolean;
+  isFormValidate?:boolean;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private registerValidate: RegisterValidate
+  ) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group(
@@ -28,11 +47,25 @@ export class StudentRegisterComponent {
         cpf: [''],
         rg: [''],
         date_of_birth: [''],
-        email: ['',Validators.required],
+        email: [''],
         password: [''],
-        confirmPassword: ['']
+        confirmPassword: [''],
+        courses: [[{}]]
       }
     );
+
+    this.correctName = true;
+    this.correctLastName = true
+    this.correctRegistration = true;
+    this.correctLevel = true;
+    this.correctCpf = true;
+    this.correctRg = true;
+    this.correctBirthDay = true;
+    this.correctEmail = true;
+    this.correctPassWord = true;
+    this.correctConfirmPassword = true;
+    this.isFormValidate = true;
+
     this.form.get('level')?.setValue('Graduação');
   }
 
@@ -48,21 +81,36 @@ export class StudentRegisterComponent {
     const formattedValue = numericValue.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
     this.form.get(cpf)?.setValue(formattedValue);
   }
-  
+
 
   onInputChangeChar(controlName: string, event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
-    const numericValue = inputValue.replace(/[^a-zA-Z\s]/g, '');
+    const numericValue = inputValue.replace(/[^a-zA-ZÀ-ÖØ-öø-ÿ\s]/g, '');
     this.form.get(controlName)?.setValue(numericValue);
   }
 
   onSubmit() {
     this.elements = this.form.value;
-    console.log("###", this.elements);
+    this.formValues = this.registerValidate.userValidate(this.elements);
+
+    this.correctName = this.formValues.name;
+    this.correctLastName = this.formValues.last_name
+    this.correctRegistration = this.formValues.registration_number;
+    this.correctLevel = this.formValues.level;
+    this.correctCpf = this.formValues.cpf;
+    this.correctRg = this.formValues.rg;
+    this.correctBirthDay = this.formValues.date_of_birth;
+    this.correctEmail = this.formValues.email;
+    this.correctPassWord = this.formValues.password;
+    this.correctConfirmPassword = this.formValues.confirmPassword;
+    this.isFormValidate = this.formValues.isValidForm
+
+    if (this.formValues.isValidForm) {
+      this.form.reset();
+    }
   }
   backPage() {
     this.endForm = window.confirm("Deseja cancelar a operação? Todos os dados digitados não salvos serão perdidos!");
-    console.log("###", this.endForm);
     this.endForm && this.router.navigate(['/login']);
   }
 }

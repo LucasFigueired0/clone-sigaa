@@ -35,12 +35,8 @@ export class LoginFormComponent {
       .subscribe((result) => {
         if (result) {
           this.isValidForm = false;
-          console.log(result)
-          console.log(this.isValidForm)
         } else {
           this.isValidForm = true;
-          console.log(result)
-          console.log(this.isValidForm)
         }
       })
   }

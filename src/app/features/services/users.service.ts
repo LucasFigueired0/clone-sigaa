@@ -20,17 +20,9 @@ export class UsersService {
   constructor(private httpClient: HttpClient) { }
 
   httpOptions = {
-    headers: new Headers({
+    headers: new HttpHeaders({
       'Content-type':'application/json'
     })
-  }
-
-  getByUsername(email:string):Observable<Users[]>{
-    return this.httpClient.get<Users[]>(`${this.url}?username=${email}`)
-    .pipe(
-      retry(2),
-      catchError(this.handleError)
-    )
   }
 
   getUserLogin(username:string,password:string):Observable<Users[]>{
@@ -38,17 +30,35 @@ export class UsersService {
     .pipe(
       retry(2),
       catchError(this.handleError)
-    )
-  }
+      )
+    }
 
-  getByPassword(password:string):Observable<Users[]>{
-    return this.httpClient.get<Users[]>(`${this.url}?password=${password}`)
-    .pipe(
-      retry(2),
-      catchError(this.handleError)
-    )
-  }
+  //Cria um usuário
+  setUser(users: Users): Observable<Users> {
+    return this.httpClient.post<Users>(this.url, JSON.stringify(
+      {
 
+      "id":users.id,
+      "name":users.name,
+      "last_name":users.last_name,
+      "username":users.username,
+      "registration_number":users.registration_number,
+      "level":users.level,
+      "cpf":users.cpf,
+      "rg":users.rg,
+      "date_of_birth":users.date_of_birth,
+      "initial_semester":users.initial_semester,
+      "password":users.password,
+      "courses":users.courses
+      
+    }
+    ), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+ 
   handleError(error:HttpErrorResponse){
     let errorMessage = '';
     if(error.error instanceof ErrorEvent){

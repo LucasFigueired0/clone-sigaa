@@ -1,54 +1,99 @@
 {
-    "students":[
+  "students": [
+    {
+      "id": 1,
+      "name": "Lucas",
+      "last_name": "Eleutério",
+      "username": "lucas.figueiredo",
+      "registration_number": "2010009210",
+      "nivel": "Graduacao",
+      "cpf": "93928465090",
+      "rg": "487348047",
+      "date_of_birth": "30/03/1958",
+      "initial_semester": "2019-1",
+      "password": "1234",
+      "courses": [
         {
-            "id":1,
-            "name":"Lucas",
-            "last_name":"Eleutério",
-            "username":"lucas.figueiredo",
-            "registration_number":"2010009210",
-            "nivel":"Graduacao",
-            "cpf":"93928465090",
-            "rg":"487348047",
-            "date_of_birth":"30/03/1958",
-            "initial_semester":"2019-1",
-            "password":"1234",
-            "courses":[
-                {
-                    "id":1,
-                    "name":"Estrutura de dados",
-                    "professor":"Fulano de tal"
-                },
-                {
-                    "id":2,
-                    "name":"Bancos de dados",
-                    "professor":"Junior"
-                }
-            ]
+          "id": 1,
+          "name": "Estrutura de dados",
+          "professor": "Fulano de tal"
         },
         {
-            "id":2,
-            "name":"Yuri",
-            "last_name":"Souza",
-            "username":"yuri.souza",
-            "registration_number":"2010009211",
-            "level":"Graduacao",
-            "cpf":"26370962090",
-            "rg":"370900170",
-            "date_of_birth":"20/08/1960",
-            "initial_semester":"2019-1",
-            "password":"4567",
-            "courses":[
-                {
-                    "id":1,
-                    "name":"Geometria analítica",
-                    "professor":"Fulano de tal"
-                },
-                {
-                    "id":2,
-                    "name":"Bancos de dados",
-                    "professor":"Junior"
-                }
-            ]
+          "id": 2,
+          "name": "Bancos de dados",
+          "professor": "Junior"
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Yuri",
+      "last_name": "Souza",
+      "username": "yuri.souza",
+      "registration_number": "2010009211",
+      "level": "Graduacao",
+      "cpf": "26370962090",
+      "rg": "370900170",
+      "date_of_birth": "20/08/1960",
+      "initial_semester": "2019-1",
+      "password": "4567",
+      "courses": [
+        {
+          "id": 1,
+          "name": "Geometria analítica",
+          "professor": "Fulano de tal"
+        },
+        {
+          "id": 2,
+          "name": "Bancos de dados",
+          "professor": "Junior"
+        }
+      ]
+    },
+    {
+      "name": "Namomi",
+      "last_name": "Eleutério",
+      "username": "namomi.eleuterio",
+      "registration_number": "12312312312",
+      "level": "Mestrado",
+      "cpf": "044.044.777-77",
+      "rg": "456789778888888",
+      "date_of_birth": "2000-02-01",
+      "password": "123123",
+      "courses": [
+        {}
+      ],
+      "id": 3
+    },
+    {
+      "name": "Viviane",
+      "last_name": "Martins",
+      "username": "viviane.martins",
+      "registration_number": "12312312312",
+      "level": "Graduação",
+      "cpf": "044.055.789-87",
+      "rg": "456455477777777",
+      "date_of_birth": "1980-05-05",
+      "password": "123123",
+      "courses": [
+        {}
+      ],
+      "id": 4
+    },
+    {
+      "name": "Catarina",
+      "last_name": "Serrão",
+      "username": "catarina.serrao",
+      "registration_number": "12345678945",
+      "level": "Graduação",
+      "cpf": "122.454.558-58",
+      "rg": "459874552241455",
+      "date_of_birth": "2001-02-01",
+      "password": "123123",
+      "courses": [
+        {}
+      ],
+      "id": 5
+    }
+  ]
 }

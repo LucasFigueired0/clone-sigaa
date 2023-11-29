@@ -1,4 +1,22 @@
 <div class="register">
+  <div class="form-error" *ngIf="!isFormValidate">
+    <div id="errors-id">
+      <img src="../../../assets/images/error.gif" alt="">
+      <ul>
+        <li *ngIf="!correctPassWord">É obrigatório informar a senha.</li>
+        <li *ngIf="!correctCpf">CPF: Formato inválido.</li>
+        <li *ngIf="!correctRg">É obrigatório informar a matrícula</li>
+        <li *ngIf="!correctEmail">É obrigatório informar o e-mail.</li>
+        <li *ngIf="!correctBirthDay">É obrigatório informar a data de nascimento.</li>
+        <li *ngIf="!correctRegistration">É obrigatório informar a matrícula.</li>
+        <li *ngIf="!correctName">É obrigatório informar o nome.</li>
+        <li *ngIf="!correctLastName">É obrigatório informar o sobrenome.</li>
+      </ul>
+    </div>
+    <div id="close-errors">
+      <p (click)="isFormValidate=true">(x) fechar mensagens</p>
+    </div>
+  </div>
   <app-title-forms titleForm="CADASTRO DE DISCENTES"></app-title-forms>
   <P
     >Para cadastrar-se no SIGAA é necessário preencher o formulário abaixo. O
@@ -19,6 +37,7 @@
               class="litle-input"
               formControlName="name"
               (input)="onInputChangeChar('name', $event)"
+              maxlength="100"
             />
           </td>
         </tr>
@@ -30,6 +49,7 @@
               class="large-input"
               formControlName="last_name"
               (input)="onInputChangeChar('last_name', $event)"
+              maxlength="150"
             />
           </td>
         </tr>
@@ -41,6 +61,7 @@
               class="litle-input"
               formControlName="registration_number"
               (input)="onInputChangeNumber('registration_number', $event)"
+              maxlength="11"
             />
           </td>
         </tr>
@@ -49,7 +70,6 @@
           <td>
             <select
               name="level"
-              id=""
               class="large-input"
               formControlName="level"
             >
@@ -93,8 +113,7 @@
           <td>
             <input
               type="email"
-              name=""
-              id=""
+              name="email"
               class="large-input"
               formControlName="email"
             />
@@ -109,6 +128,7 @@
             type="password"
             class="litle-input"
             formControlName="password"
+            maxlength="30"
           />
         </tr>
         <tr>
@@ -117,6 +137,7 @@
             type="password"
             class="litle-input"
             formControlName="confirmPassword"
+            maxlength="30"
           />
         </tr>
       </tbody>
