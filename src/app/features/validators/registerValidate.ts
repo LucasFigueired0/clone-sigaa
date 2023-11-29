@@ -28,7 +28,10 @@ export class RegisterValidate {
         }
     }
 
-    private userNameConverter(name:string):string{
+    private userNameConverter(nameInput:string):string{
+        const words = nameInput.split(" ");
+        const name = words[words.length-1];
+
         const accentRemove = name.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         const removeSpace = accentRemove.replace(/\s+/g, '');
         const lowercaseLetter = removeSpace.toLowerCase();

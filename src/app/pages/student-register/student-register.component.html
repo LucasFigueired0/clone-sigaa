@@ -3,6 +3,7 @@
     <div id="errors-id">
       <img src="../../../assets/images/error.gif" alt="">
       <ul>
+        <li *ngIf="!correctConfirmPassword">A senha não confere com a confirmação.</li>
         <li *ngIf="!correctPassWord">É obrigatório informar a senha.</li>
         <li *ngIf="!correctCpf">CPF: Formato inválido.</li>
         <li *ngIf="!correctRg">É obrigatório informar a matrícula</li>

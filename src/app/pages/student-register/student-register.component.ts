@@ -103,9 +103,9 @@ export class StudentRegisterComponent {
     this.correctEmail = this.formValues.email;
     this.correctPassWord = this.formValues.password;
     this.correctConfirmPassword = this.formValues.confirmPassword;
-    this.isFormValidate = this.formValues.isValidForm
+    this.isFormValidate = this.formValues.isValidForm && this.formValues.confirmPassword
 
-    if (this.formValues.isValidForm) {
+    if (this.formValues.isValidForm && this.formValues.confirmPassword) {
       this.form.reset();
     }
   }

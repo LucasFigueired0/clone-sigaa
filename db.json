@@ -94,6 +94,36 @@
         {}
       ],
       "id": 5
+    },
+    {
+      "name": "João",
+      "last_name": "Francisco dos Santos Eleutério",
+      "username": "joao.eleuterio",
+      "registration_number": "2019887755",
+      "level": "Mestrado",
+      "cpf": "045.789.977-78",
+      "rg": "123456789788888",
+      "date_of_birth": "2005-05-02",
+      "password": "123123",
+      "courses": [
+        {}
+      ],
+      "id": 6
+    },
+    {
+      "name": "Eluzaire",
+      "last_name": "Santos Serrão",
+      "username": "eluzaire.serrao",
+      "registration_number": "20141478877",
+      "level": "Mestrado",
+      "cpf": "123.456.789-54",
+      "rg": "456789877777777",
+      "date_of_birth": "2002-11-30",
+      "password": "123456",
+      "courses": [
+        {}
+      ],
+      "id": 7
     }
   ]
 }
