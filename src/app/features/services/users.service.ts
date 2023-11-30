@@ -8,6 +8,7 @@ import {
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Users } from '../models/users';
+import { IsLoginValid } from '../models/isLoginValidType';
 
 @Injectable({
   providedIn: 'root'
@@ -33,11 +34,9 @@ export class UsersService {
       )
     }
 
-  //Cria um usuário
   setUser(users: Users): Observable<Users> {
     return this.httpClient.post<Users>(this.url, JSON.stringify(
       {
-
       "id":users.id,
       "name":users.name,
       "last_name":users.last_name,
@@ -57,6 +56,20 @@ export class UsersService {
         retry(2),
         catchError(this.handleError)
       )
+  }
+
+  isValidLogin():IsLoginValid{
+    const dataLogin= localStorage.getItem("loggedInUser")
+    let data: IsLoginValid
+
+    if(dataLogin !== null){
+      data = JSON.parse(dataLogin) as IsLoginValid
+      return data;
+    }
+    else{
+      data = {isLoggedIn:false, id:undefined} as IsLoginValid
+      return data;
+    }
   }
  
   handleError(error:HttpErrorResponse){

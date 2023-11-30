@@ -124,6 +124,21 @@
         {}
       ],
       "id": 7
+    },
+    {
+      "name": "Naomi",
+      "last_name": "Serrão Eleutério",
+      "username": "naomi.eleuterio",
+      "registration_number": "12312312312",
+      "level": "Graduação",
+      "cpf": "456.456.458-78",
+      "rg": "789456554445",
+      "date_of_birth": "1980-05-05",
+      "password": "123123",
+      "courses": [
+        {}
+      ],
+      "id": 8
     }
   ]
 }

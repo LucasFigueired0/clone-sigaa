@@ -17,8 +17,9 @@ import { LoginFormComponent } from './pages/login/components/login-form/login-fo
 import { RegisterOptionsComponent } from './pages/login/components/register-options/register-options.component';
 import { StudentRegisterComponent } from './pages/student-register/student-register.component';
 import { TitleFormsComponent } from './components/title-forms/title-forms.component';
-import { StudentComponent } from './pages/student/student.component';
+
 import { RegisterValidate } from './features/validators/registerValidate';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { RegisterValidate } from './features/validators/registerValidate';
     RegisterOptionsComponent,
     StudentRegisterComponent,
     TitleFormsComponent,
-    StudentComponent,
+    HomeComponent,
     
   ],
   imports: [

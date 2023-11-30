@@ -70,9 +70,8 @@ export class RegisterValidate {
         if(this.form.valid && this.passwordValidation(this.form.value.password, this.form.value.confirmPassword)){
             object['username'] = `${this.userNameConverter(object.name)}.${this.userNameConverter(object.last_name)}`;
             this.usersService.setUser(object).subscribe({
-                next:(result) => {
-                
-                  console.log('Usuário criado com sucesso:', result);
+                next:() => {
+                  this.usersService.isValidLogin();
                   const sucess = window.confirm("Usuário criado com sucesso! Deseja voltar à tela de login?");
                   sucess && this.router.navigate(['/login']);
                 },
