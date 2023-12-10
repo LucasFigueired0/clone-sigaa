@@ -2,6 +2,8 @@ export interface RegisterValidateType {
     name: boolean;
     last_name: boolean;
     registration_number: boolean;
+    undergraduate_degree: boolean;
+    semester:boolean;
     level: boolean;
     cpf: boolean;
     rg: boolean;

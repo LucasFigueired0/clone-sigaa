@@ -20,6 +20,8 @@ import { TitleFormsComponent } from './components/title-forms/title-forms.compon
 
 import { RegisterValidate } from './features/validators/registerValidate';
 import { HomeComponent } from './pages/home/home.component';
+import { HomeBarComponent } from './pages/home/components/home-bar/home-bar.component';
+import { HomeNewsComponent } from './pages/home/components/home-news/home-news.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { HomeComponent } from './pages/home/home.component';
     StudentRegisterComponent,
     TitleFormsComponent,
     HomeComponent,
+    HomeBarComponent,
+    HomeNewsComponent,
     
   ],
   imports: [

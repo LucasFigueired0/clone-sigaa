@@ -22,6 +22,7 @@ export class StudentRegisterComponent {
   correctName?: boolean;
   correctLastName?: boolean;
   correctRegistration?: boolean;
+  correctUndergraduateDegree?:boolean;
   correctLevel?: boolean;
   correctCpf?: boolean;
   correctRg?: boolean;
@@ -30,6 +31,7 @@ export class StudentRegisterComponent {
   correctPassWord?: boolean;
   correctConfirmPassword?: boolean;
   isFormValidate?:boolean;
+  correctSemester?:boolean;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -43,13 +45,15 @@ export class StudentRegisterComponent {
         name: [''],
         last_name: [''],
         registration_number: [''],
+        undergraduate_degree:[''],
+        semester:[''],
         level: [''],
         cpf: [''],
         rg: [''],
         date_of_birth: [''],
         email: [''],
         password: [''],
-        confirmPassword: [''],
+        confirmPassword: [''], 
         courses: [[{}]]
       }
     );
@@ -57,6 +61,7 @@ export class StudentRegisterComponent {
     this.correctName = true;
     this.correctLastName = true
     this.correctRegistration = true;
+    this.correctUndergraduateDegree = true;
     this.correctLevel = true;
     this.correctCpf = true;
     this.correctRg = true;
@@ -65,6 +70,7 @@ export class StudentRegisterComponent {
     this.correctPassWord = true;
     this.correctConfirmPassword = true;
     this.isFormValidate = true;
+    this.correctSemester = true;
 
     this.form.get('level')?.setValue('Graduação');
   }
@@ -82,7 +88,16 @@ export class StudentRegisterComponent {
     this.form.get(cpf)?.setValue(formattedValue);
   }
 
-
+  semesterFormat(value: string, event: Event) {
+    const inputValue = (event.target as HTMLInputElement).value;
+    const numericValue = inputValue.replace(/\D/g, '');
+  
+    // Modificação para o formato desejado (0000-0)
+    const formattedValue = numericValue.replace(/(\d{4})(\d{1})/, "$1-$2");
+  
+    this.form.get(value)?.setValue(formattedValue);
+  }
+  
   onInputChangeChar(controlName: string, event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
     const numericValue = inputValue.replace(/[^a-zA-ZÀ-ÖØ-öø-ÿ\s]/g, '');
@@ -96,6 +111,7 @@ export class StudentRegisterComponent {
     this.correctName = this.formValues.name;
     this.correctLastName = this.formValues.last_name
     this.correctRegistration = this.formValues.registration_number;
+    this.correctUndergraduateDegree = this.formValues.undergraduate_degree;
     this.correctLevel = this.formValues.level;
     this.correctCpf = this.formValues.cpf;
     this.correctRg = this.formValues.rg;
@@ -103,6 +119,7 @@ export class StudentRegisterComponent {
     this.correctEmail = this.formValues.email;
     this.correctPassWord = this.formValues.password;
     this.correctConfirmPassword = this.formValues.confirmPassword;
+    this.correctSemester = this.formValues.semester;
     this.isFormValidate = this.formValues.isValidForm && this.formValues.confirmPassword
 
     if (this.formValues.isValidForm && this.formValues.confirmPassword) {

@@ -5,6 +5,8 @@ export interface Users {
     last_name:string;
     username:string;
     registration_number:string;
+    undergraduate_degree?:string,
+    semester:string,
     level:string;
     cpf:string;
     rg:string,

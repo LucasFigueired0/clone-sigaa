@@ -25,15 +25,23 @@ export class LoginValidate {
     private logged(user: Users) {
         const login: IsLoginValid = {
             isLoggedIn: true,
-            id: user.id
+            id: user.id,
+            name:user.name +" " +user.last_name,
+            email:user.email,
+            registration_number:user.registration_number,
+            undergraduate_degree:user.undergraduate_degree,
+            initial_semester:user.initial_semester,
+            level:user.level
         }
+        this.usersService.dataValidLogin(login);
+
         localStorage.setItem("loggedInUser", JSON.stringify(login))
     }
 
     private notLogged() {
         const login: IsLoginValid = {
             isLoggedIn: false,
-            id: undefined
+            id: undefined,
         }
         localStorage.setItem("loggedInUser", JSON.stringify(login))
     }
@@ -41,11 +49,12 @@ export class LoginValidate {
     loginConfirm(username: string, password: string): Observable<Boolean> {
         return new Observable((observer: Observer<boolean>) => {
             this.usersService.getUserLogin(username, password).subscribe({
-                next: (user: Users[]) => {
+                next: (user: Users) => {
                     try {
-                        if (user[0] !== undefined) {
-                            this.logged(user[0])
-                            this.userDataName = user[0];
+                        if (user !== undefined) {
+                            this.logged(user)
+                            this.userDataName = user;
+                            console.log(this.userDataName)
                             this.router.navigate(['/discente'])
 
                             observer.next(true);

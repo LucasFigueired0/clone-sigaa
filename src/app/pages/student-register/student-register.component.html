@@ -1,3 +1,5 @@
+<app-header>
+</app-header>
 <div class="register">
   <div class="form-error" *ngIf="!isFormValidate">
     <div id="errors-id">
@@ -8,8 +10,10 @@
         <li *ngIf="!correctCpf">CPF: Formato inválido.</li>
         <li *ngIf="!correctRg">É obrigatório informar a matrícula</li>
         <li *ngIf="!correctEmail">É obrigatório informar o e-mail.</li>
-        <li *ngIf="!correctBirthDay">É obrigatório informar a data de nascimento.</li>
+        <li *ngIf="!correctBirthDay">É obrigatório informar a data de nascimento.</li> 
         <li *ngIf="!correctRegistration">É obrigatório informar a matrícula.</li>
+        <li *ngIf="!correctSemester">É obrigatório informar o semestre de início.</li>
+        <li *ngIf="!correctUndergraduateDegree">É obrigatório informar o curso.</li>
         <li *ngIf="!correctName">É obrigatório informar o nome.</li>
         <li *ngIf="!correctLastName">É obrigatório informar o sobrenome.</li>
       </ul>
@@ -64,6 +68,31 @@
               (input)="onInputChangeNumber('registration_number', $event)"
               maxlength="11"
             />
+          </td>
+        </tr>
+        <tr>
+          <th class="th-input">Curso:</th>
+          <td>
+            <input
+              type="text"
+              class="large-input"
+              formControlName="undergraduate_degree"
+              (input)="onInputChangeChar('undergraduate_degree', $event)"
+              maxlength="100"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th class="th-input">Semestre inicial</th>
+          <td>
+            <input
+              type="text"
+              class="input-semester"
+              formControlName="semester"
+              (input)="semesterFormat('semester', $event)"
+              maxlength="5"
+            />
+            <i>Ex.: 2020-1</i>
           </td>
         </tr>
         <tr>

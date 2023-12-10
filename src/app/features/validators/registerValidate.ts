@@ -44,6 +44,8 @@ export class RegisterValidate {
                 name: [`${object.name}`, [Validators.required, Validators.minLength(2)]],
                 last_name: [`${object.last_name}`, [Validators.required, Validators.minLength(2)]],
                 registration_number: [`${object.registration_number}`, [Validators.required, Validators.minLength(4)]],
+                undergraduate_degree:[`${object.undergraduate_degree}`, [Validators.required,Validators.minLength(4)]],
+                semester:[`${object.semester}`,[Validators.required,Validators.minLength(5)]],
                 level: [`${object.level}`],
                 cpf: [`${object.cpf}`, [Validators.required, Validators.minLength(11)]],
                 rg: [`${object.rg}`, [Validators.required, Validators.minLength(4)]],
@@ -57,6 +59,8 @@ export class RegisterValidate {
             name: this.form.get('name')?.errors === null ? true : false,
             last_name: this.form.get('last_name')?.errors === null ? true : false,
             registration_number: this.form.get('registration_number')?.errors === null ? true : false,
+            undergraduate_degree: this.form.get('undergraduate_degree')?.errors === null ? true : false,
+            semester: this.form.get('semester')?.errors === null ? true : false,
             level: this.form.get('level')?.errors === null ? true : false,
             cpf: this.form.get('cpf')?.errors === null ? true : false,
             rg: this.form.get('rg')?.errors === null ? true : false,
@@ -69,6 +73,7 @@ export class RegisterValidate {
 
         if(this.form.valid && this.passwordValidation(this.form.value.password, this.form.value.confirmPassword)){
             object['username'] = `${this.userNameConverter(object.name)}.${this.userNameConverter(object.last_name)}`;
+            
             this.usersService.setUser(object).subscribe({
                 next:() => {
                   this.usersService.isValidLogin();
