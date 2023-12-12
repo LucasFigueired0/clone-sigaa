@@ -1,6 +1,7 @@
 <header class="header">
     <div>
-        <h1>UFOPA - SIGAA</h1><p> - Sistema Integrado de Gestão de Atividades Acadêmicas</p>
+        <div id="name-ufopa"><h1>UFOPA - SIGAA</h1><p> - Sistema Integrado de Gestão de Atividades Acadêmicas</p></div>
+        <a *ngIf="isloggedIn" (click)="clickButton()" id="goBack">Sair</a>
     </div>
     <div>
         <ng-content></ng-content>

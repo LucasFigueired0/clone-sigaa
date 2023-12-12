@@ -1,0 +1,37 @@
+.home-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #EFEBDE;
+    height: 25px;
+}
+#items-bar{
+    display: flex;
+    width: px;
+    gap: 5px;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.item-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+}
+
+
+
+.item-bar img{
+    width: 15px;
+    height: 15px;
+}
+
+.item-bar p{
+    font-size: 70%;
+}
+
+.item-bar:hover{
+    background-color: #C4D2EB;
+    cursor: pointer;
+}

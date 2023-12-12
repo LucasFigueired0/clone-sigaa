@@ -1,4 +1,19 @@
 <app-header>
-    <div *ngIf="isValidUser">{{nameUser}}</div>
-  </app-header>
-<p>home works!</p>
+  <div *ngIf="isValidUser" id="name-user"><p>{{ nameUser }}</p></div>
+</app-header>
+<app-home-bar></app-home-bar>
+<div class="home-body">
+  <div class="left-block">
+    <app-home-news></app-home-news>
+    <app-courses-list></app-courses-list>
+  </div>
+  <div class="right-block">
+    <app-institutional-data 
+    nameRegister="{{register}}"
+    graduateRegister="{{undergraduate_degree}}"
+    levelRegister="{{level}}"
+    emailRegister="{{email}}"
+    semesterRegister="{{initial_semester}}"
+    ></app-institutional-data>
+  </div>
+</div>

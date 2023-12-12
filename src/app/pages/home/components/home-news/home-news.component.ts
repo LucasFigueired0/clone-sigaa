@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-news.component.scss']
 })
 export class HomeNewsComponent {
-
+  
 }

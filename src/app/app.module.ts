@@ -22,6 +22,8 @@ import { RegisterValidate } from './features/validators/registerValidate';
 import { HomeComponent } from './pages/home/home.component';
 import { HomeBarComponent } from './pages/home/components/home-bar/home-bar.component';
 import { HomeNewsComponent } from './pages/home/components/home-news/home-news.component';
+import { CoursesListComponent } from './pages/home/components/courses-list/courses-list.component';
+import { InstitutionalDataComponent } from './pages/home/components/institutional-data/institutional-data.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { HomeNewsComponent } from './pages/home/components/home-news/home-news.c
     HomeComponent,
     HomeBarComponent,
     HomeNewsComponent,
+    CoursesListComponent,
+    InstitutionalDataComponent,
     
   ],
   imports: [

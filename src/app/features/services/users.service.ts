@@ -28,18 +28,20 @@ export class UsersService {
     })
   }
 
-  // getUserLogin(username:string,password:string):Observable<Users[]>{
-  //   return this.httpClient.get<Users[]>(`${this.url}?username=${username}&password=${password}`)
-  //   .pipe(
-  //     retry(2),
-  //     catchError(this.handleError)
-  //     )
-  // }
-
   getUserLogin(username: string, password: string): Observable<Users> {
     return this.httpClient.post<Users>(this.url + "sign-in", JSON.stringify({
       "username": username,
       "password": password
+    }), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  getUserById(): Observable<Users> {
+    return this.httpClient.post<Users>(this.url + "get-data-user", JSON.stringify({
+      id:"11"
     }), this.httpOptions)
       .pipe(
         retry(2),
@@ -75,12 +77,6 @@ export class UsersService {
       this.dataUser = {
         isLoggedIn: user.isLoggedIn,
         id: user.id,
-        name: user.name + " " + user.last_name,
-        email: user.email,
-        registration_number: user.registration_number,
-        undergraduate_degree: user.undergraduate_degree,
-        initial_semester: user.initial_semester,
-        level: user.level
       }
       return this.dataUser
     } else {
@@ -88,10 +84,6 @@ export class UsersService {
         isLoggedIn: user.isLoggedIn,
       }
     }
-  }
-
-  getDataValidLogin(): IsLoginValid {
-    return this.dataUser
   }
 
   isValidLogin(): IsLoginValid {

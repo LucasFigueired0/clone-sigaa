@@ -1,1 +1,8 @@
-<p>home-bar works!</p>
+<div class="home-bar">
+    <ul id="items-bar">
+        <li *ngFor="let item of listBar" class="item-bar">
+            <img src={{item.imgUrl}} alt="">
+            <p>{{item.description}}</p>
+        </li>
+    </ul>
+</div>

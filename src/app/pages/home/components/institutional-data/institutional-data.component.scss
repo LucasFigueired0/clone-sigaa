@@ -1,0 +1,29 @@
+
+.institutional-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background: #EFF3FA;
+    margin:5px;
+}
+
+table {
+    width: 295px;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  h3{
+    font-size: 90%;
+  }
+  th, td {
+   
+    padding: 8px;
+    text-align: left;
+    font-size: 70%;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
