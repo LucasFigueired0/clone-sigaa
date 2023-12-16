@@ -28,7 +28,7 @@ export class HomeComponent {
 
   ngOnInit() {
     this.isValidUser = this.user.isValidLogin().isLoggedIn
-    this.iduser = this.user.isValidLogin().id
+    
     this.userData = this.user.isValidLogin();
     this.lastNameUser = this.user.isValidLogin().last_name
     
@@ -41,6 +41,7 @@ export class HomeComponent {
       (user:Users) => {
         this.userByIddata = user;
 
+        this.iduser = this.userByIddata.id
         this.nameUser = this.userByIddata.name +' '+ this.userByIddata.last_name
         this.register = this.userByIddata.registration_number;
         this.undergraduate_degree = this.userByIddata.undergraduate_degree;

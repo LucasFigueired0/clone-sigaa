@@ -14,7 +14,7 @@ import { IsLoginValid } from '../models/isLoginValidType';
   providedIn: 'root'
 })
 export class UsersService {
-  url = 'http://localhost:3001/users/';
+  url = 'http://localhost:3000/users/';
   name!: string;
   data!: Users;
   dataUser!: IsLoginValid;
@@ -40,8 +40,11 @@ export class UsersService {
   }
 
   getUserById(): Observable<Users> {
+    const data = this.isValidLogin();
+    console.log(data.id)
+
     return this.httpClient.post<Users>(this.url + "get-data-user", JSON.stringify({
-      id:"11"
+      id:`${data.id}`
     }), this.httpOptions)
       .pipe(
         retry(2),
@@ -87,7 +90,7 @@ export class UsersService {
   }
 
   isValidLogin(): IsLoginValid {
-    const dataLogin = localStorage.getItem("loggedInUser")
+    const dataLogin = localStorage.getItem("loggedInUser");
     let data: IsLoginValid
 
     if (dataLogin !== null) {
